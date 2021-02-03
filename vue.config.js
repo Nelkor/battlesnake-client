@@ -2,9 +2,9 @@ const path = require('path')
 const { readdirSync } = require('fs')
 
 const modules = 'src/modules'
+const modulesDir = readdirSync(modules)
 const resolve = str => path.resolve(__dirname, `./${str}`)
-const modulesDir = readdirSync(resolve(modules))
-const makeUrl = schema => `${schema}://localhost:3061`
+const makeUrl = schema => `${schema}://localhost:3063`
 
 module.exports = {
   configureWebpack: {
