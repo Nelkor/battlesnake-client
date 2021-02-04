@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <AuthCard/>
+    <AuthCard v-if="isAuthChecked"/>
     <AppMain/>
   </div>
 </template>
@@ -14,6 +14,11 @@ export default {
   components: {
     AuthCard,
     AppMain,
+  },
+  computed: {
+    isAuthChecked() {
+      return this.$store.state.auth.isAuthChecked
+    },
   },
   created() {
     this.$store.dispatch('auth/checkAuth')

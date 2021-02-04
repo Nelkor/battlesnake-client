@@ -1,4 +1,4 @@
-import { get } from '@net/http'
+import { get, post } from '@net/http'
 
 export default {
   namespaced: true,
@@ -26,15 +26,39 @@ export default {
         return
       }
 
-      const { id, name } = data
-
       ctx.commit('setAuthChecked')
 
-      if (!id) {
+      if (!data.id) {
         return
       }
 
-      ctx.commit('setUser', { id, name })
+      ctx.commit('setUser', data)
+    },
+    async logIn(ctx, { name, password }) {
+      const params = { body: { name, password } }
+
+      const [error, data] = await post('auth/log-in', params)
+
+      if (error) {
+        console.error(error)
+
+        return
+      }
+
+      ctx.commit('setUser', data)
+    },
+    async reg(ctx, { name, password }) {
+      const params = { body: { name, password } }
+
+      const [error, data] = await post('auth/reg', params)
+
+      if (error) {
+        console.error(error)
+
+        return
+      }
+
+      ctx.commit('setUser', data)
     },
   },
 }
