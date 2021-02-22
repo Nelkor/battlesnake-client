@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import auth from '@auth/auth-routes'
-import profile from '@profile/profile-routes'
+// modules' routes
+import auth from '@auth/routes/auth-routes'
+import profile from '@profile/routes/profile-routes'
 
 import AppRoot from '@root/AppRoot'
 

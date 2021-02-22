@@ -1,0 +1,18 @@
+@import 'header';
+
+//#app {
+//  overflow-x: hidden;
+//}
+
+.app-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &.blocked {
+    filter: grayscale(50%) blur(1px);
+    pointer-events: none;
+  }
+}

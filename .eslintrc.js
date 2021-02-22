@@ -89,5 +89,11 @@ module.exports = {
         jest: true,
       },
     },
+    {
+      files: ['src/modules/icons/**'],
+      rules: {
+        'max-len': 0, // off
+      },
+    },
   ],
 }

@@ -1,0 +1,22 @@
+@import 'colors';
+
+@mixin regular {
+  font-size: 20px;
+  line-height: 150%;
+}
+
+html {
+  font-family: 'Trebuchet MS', sans-serif;
+  color: $color-text-primary;
+  @include regular;
+}
+
+.t8y-header {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.t8y-regular {
+  @include regular;
+}

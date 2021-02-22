@@ -1,23 +1,33 @@
 <template>
   <div id="app">
-    <AuthCard v-if="isAuthChecked"/>
-    <AppMain/>
+    <div
+      v-if="$store.state.auth.isAuthChecked"
+      class="app-wrapper"
+      :class="{ blocked: isPopUpShown }"
+    >
+      <AppHeader/>
+      <AppMain/>
+    </div>
+
+    <PopUp v-if="isPopUpShown"/>
   </div>
 </template>
 
 <script>
-import AuthCard from '@auth/components/AuthCard'
+import AppHeader from '@layout/components/AppHeader'
 import AppMain from '@layout/components/AppMain'
+import PopUp from '@pop-up/PopUp'
 
 export default {
   name: 'App',
   components: {
-    AuthCard,
+    AppHeader,
     AppMain,
+    PopUp,
   },
   computed: {
-    isAuthChecked() {
-      return this.$store.state.auth.isAuthChecked
+    isPopUpShown() {
+      return this.$store.getters['popUp/shown']
     },
   },
   created() {
