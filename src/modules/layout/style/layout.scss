@@ -1,8 +1,14 @@
 @import 'header';
+@import 'app-main';
+@import 'aside';
 
-//#app {
-//  overflow-x: hidden;
-//}
+body {
+  background-color: #e9eded;
+}
+
+#app {
+  overflow-x: hidden;
+}
 
 .app-wrapper {
   position: relative;

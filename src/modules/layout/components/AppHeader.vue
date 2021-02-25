@@ -1,7 +1,14 @@
 <template>
-  <header class="app-header">
-    <div class="wrapper">
-      <IconBurger/>
+  <header class="app-header shadow">
+    <div class="header-wrapper">
+      <div class="logo">Logo</div>
+
+      <div
+        class="header-burger"
+        @click="openAside"
+      >
+        <IconBurger/>
+      </div>
     </div>
   </header>
 </template>
@@ -18,6 +25,11 @@ export default {
   },
   computed: {
     ...mapState('auth', ['id', 'name']),
+  },
+  methods: {
+    openAside() {
+      this.$store.commit('layout/setAppAsideOpen', true)
+    },
   },
 }
 </script>

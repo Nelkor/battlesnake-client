@@ -5,7 +5,7 @@ import VueRouter from 'vue-router'
 import auth from '@auth/routes/auth-routes'
 import profile from '@profile/routes/profile-routes'
 
-import AppRoot from '@root/AppRoot'
+import AppRoot from '@root/views/AppRoot'
 
 Vue.use(VueRouter)
 

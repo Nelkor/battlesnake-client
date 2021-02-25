@@ -1,2 +1,37 @@
+@import '~@theme/style/colors';
+
 .app-header {
+  width: 100%;
+  height: 76px;
+  background: $color-bg;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.header-wrapper {
+  width: 1200px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-burger {
+  width: 76px;
+  height: 76px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    fill: $color-primary;
+  }
+}
+
+
+@media (max-width: 999px) {
+  .header-burger {
+    display: flex;
+  }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="app-root">Root</div>
+  <div class="app-root shadow">Root</div>
 </template>
 
 <script>
